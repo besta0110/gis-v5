@@ -54,6 +54,10 @@ keystone.createList('User', {
   },
 });
 
+// initialize models for the pages
+const { HomePageBuilder } = require('./lists');
+HomePageBuilder(keystone);
+
 const authStrategy = keystone.createAuthStrategy({
   type: PasswordAuthStrategy,
   list: 'User',
@@ -62,11 +66,11 @@ const authStrategy = keystone.createAuthStrategy({
 module.exports = {
   keystone,
   apps: [
-    new NextApp({ dir: 'app' }),
     new GraphQLApp(),
     new AdminUIApp({
-      enableDefaultRoute: true,
+      // enableDefaultRoute: true,
       authStrategy,
     }),
+    new NextApp({ dir: 'app' }),
   ],
 };
