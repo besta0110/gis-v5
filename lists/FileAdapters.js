@@ -13,4 +13,4 @@ const fileAdapter = new LocalFileAdapter({
   path: '/uploads',
 });
 
-module.exports = { fileAdapter };
+module.exports = { fileAdapter, cloudinaryAdapter };
