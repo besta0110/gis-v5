@@ -333,7 +333,7 @@ class App extends Component {
                         <h2>QUICK LINKS</h2>
                       </div>
                     </div>
-                    { this.props.quickLink.length &&
+                    { this.props.quickLink.length > 0 &&
                       <div className="col col-lg-6 col-md-5">
                         <p>{this.props.quickLink[0].brief}</p>
                       </div>
