@@ -9,7 +9,7 @@ class App extends Component {
     let API_ENDPOINT = process.env.API_ENDPOINT;
     const GET_ALL_HEROES = `
     query GetHeroes {
-      allHeroes {
+      allHeroes(where: {status: approved}) {
         image {
           publicUrl
         }

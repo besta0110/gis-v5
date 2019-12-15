@@ -5,6 +5,7 @@ module.exports = {
     image: {
       type: CloudinaryImage,
       adapter: cloudinaryAdapter,
+      isRequired: true
     },
     title: {
       type: Text,
@@ -30,6 +31,6 @@ module.exports = {
     },
   },
   access: {
-    read: ({ authentication: { item, listKey } }) => ( item.isAdmin || { author: { email: item.email }}),
+    // read: ({ authentication: { item, listKey } }) => ( item.isAdmin || { author: { email: item.email }}),
   }
 }
