@@ -32,5 +32,9 @@ module.exports = {
   },
   access: {
     // read: ({ authentication: { item, listKey } }) => ( item.isAdmin || { author: { email: item.email }}),
-  }
+  },
+  adminConfig: {
+    defaultPageSize: 20,
+    defaultColumns: 'title, status, author, status',
+  },
 }
