@@ -31,11 +31,12 @@ module.exports = {
     },
   },
   access: {
+    create: true,
     update: ({ authentication: { item, listKey } }) => ( item.isAdmin || { author: { email: item.email }}),
     delete: ({ authentication: { item, listKey } }) => (item.isAdmin || { author: { email: item.email } }),
   },
   adminConfig: {
     defaultPageSize: 20,
-    defaultColumns: 'title, status, author, status',
+    defaultColumns: 'title, subTitle, author, status',
   },
 }
