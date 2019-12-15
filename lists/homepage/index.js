@@ -5,6 +5,7 @@ const EventSchema = require('./Event');
 const GoodsSchema = require('./Good');
 const JobSchema = require('./Job');
 const PortalSchema = require('./Portal');
+const QuickLinkSchema = require('./QuickLink');
 
 module.exports = (keystone) => {
   keystone.createList('Hero', HeroSchema);
@@ -14,4 +15,5 @@ module.exports = (keystone) => {
   keystone.createList('Good', GoodsSchema);
   keystone.createList('Job', JobSchema);
   keystone.createList('Portal', PortalSchema);
+  keystone.createList('QuickLink', QuickLinkSchema);
 }
