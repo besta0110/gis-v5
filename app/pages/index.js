@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import axios from 'axios'
 
-// var HtmlToReactParser = require('html-to-react').Parser;
-// var htmlToReactParser = new HtmlToReactParser();
+var HtmlToReactParser = require('html-to-react').Parser;
+var htmlToReactParser = new HtmlToReactParser();
 
 class App extends Component {
   static async getInitialProps({ renderPage }) {
