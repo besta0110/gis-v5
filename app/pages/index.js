@@ -333,9 +333,11 @@ class App extends Component {
                         <h2>QUICK LINKS</h2>
                       </div>
                     </div>
-                    <div className="col col-lg-6 col-md-5">
-                      <p dangerouslySetInnerHTML={{ __html: this.props.quickLink[0].brief }} />
-                    </div>
+                    {this.props.quickLink && this.props.quickLink.length &&
+                      <div className="col col-lg-6 col-md-5">
+                        <p dangerouslySetInnerHTML={{ __html: this.props.quickLink[0].brief }} />
+                      </div>
+                    }
                     <div className="col col-lg-3 col-md-3">
                       <div className="all-service-link">
                         <a href="#" className="theme-btn">See More</a>
