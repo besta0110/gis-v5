@@ -151,7 +151,7 @@ class App extends Component {
 
   render() {
     return (
-    <div>Hello GIS</div>
+    <div><img src="images/eng-flag.png" /></div>
     )
   };
 }

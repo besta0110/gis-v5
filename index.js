@@ -6,6 +6,8 @@ const { Text, Checkbox, Password } = require('@keystonejs/fields');
 const { GraphQLApp } = require('@keystonejs/app-graphql');
 const { AdminUIApp } = require('@keystonejs/app-admin-ui');
 const { NextApp } = require('@keystonejs/app-next');
+const { StaticApp } = require('@keystonejs/app-static');
+
 const initialiseData = require('./initial-data');
 
 const { MongooseAdapter: Adapter } = require('@keystonejs/adapter-mongoose');
@@ -90,6 +92,10 @@ module.exports = {
     new GraphQLApp(),
     new AdminUIApp({
       authStrategy,
+    }),
+    new StaticApp({
+      path: '/',
+      src: 'public',
     }),
     new NextApp({ dir: 'app' }),
   ],
