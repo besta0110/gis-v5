@@ -327,23 +327,22 @@ class App extends Component {
               </section>
               <section className="section-padding">
                 <div className="container">
+                  { this.props.quickLink.length > 0 &&
                   <div className="row">
                     <div className="col col-lg-3 col-md-4">
                       <div className="section-title">
                         <h2>QUICK LINKS</h2>
                       </div>
                     </div>
-                    { this.props.quickLink.length > 0 &&
-                      <div className="col col-lg-6 col-md-5">
-                        <p>{this.props.quickLink[0].brief}</p>
-                      </div>
-                    }
+                    <div className="col col-lg-6 col-md-5">
+                      <p>{this.props.quickLink[0].brief}</p>
+                    </div>
                     <div className="col col-lg-3 col-md-3">
                       <div className="all-service-link">
                         <a href="#" className="theme-btn">See More</a>
                       </div>
                     </div>
-                  </div>
+                  </div>}
                   {process.browser &&
                     <div className="row">
                       <div className="col col-xs-12">
