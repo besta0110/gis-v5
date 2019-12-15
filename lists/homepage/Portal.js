@@ -1,5 +1,6 @@
-const { Text, File, CloudinaryImage, Url } = require('@keystonejs/fields');
+const { Text, File, CloudinaryImage } = require('@keystonejs/fields');
 const { fileAdapter, cloudinaryAdapter } = require('../FileAdapters');
+const { Wysiwyg } = require('@keystonejs/fields-wysiwyg-tinymce');
 
 module.exports = {
   fields: {
@@ -8,7 +9,7 @@ module.exports = {
       adapter: cloudinaryAdapter,
       isRequired: true
     },
-    title: {
+    label: {
       type: Text,
       isRequired: true
     },
@@ -16,9 +17,5 @@ module.exports = {
       type: Text,
       isRequired: true
     },
-    url: {
-      type: Url,
-      isRequired: true
-    }
   }
-};
+}

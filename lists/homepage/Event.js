@@ -18,7 +18,7 @@ module.exports = {
     },
     url: {
       type: Url,
-      required: true
+      isRequired: true
     }
   }
 };
