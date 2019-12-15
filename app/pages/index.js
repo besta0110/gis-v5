@@ -442,10 +442,10 @@ class App extends Component {
                                       {job.title}
                                     </div>
                                     <div className="desc"> Job Code : {job.code}</div>
-                                    <div className="desc text-uppercase"><strong> {job.desc.uppercase} </strong></div>
+                                    <div className="desc text-uppercase"><strong> {job.uppercase} </strong></div>
                                     <div className="desc showmore">
                                       <strong>Sr. Office Assistant (in Sells)</strong>
-                                      <br />{htmlToReactParser.parse(job.desc.showmore)}
+                                      <br />{htmlToReactParser.parse(job.showmore)}
                                     </div>
                                   </div>
                                 </div>
