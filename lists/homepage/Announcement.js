@@ -6,7 +6,8 @@ module.exports = {
   fields: {
     image: {
       type: CloudinaryImage,
-      adapter: cloudinaryAdapter
+      adapter: cloudinaryAdapter,
+      isRequired: true
     },
     title: {
       type: Text,
