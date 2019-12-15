@@ -31,7 +31,8 @@ module.exports = {
     },
   },
   access: {
-    // read: ({ authentication: { item, listKey } }) => ( item.isAdmin || { author: { email: item.email }}),
+    update: ({ authentication: { item, listKey } }) => ( item.isAdmin || { author: { email: item.email }}),
+    delete: ({ authentication: { item, listKey } }) => (item.isAdmin || { author: { email: item.email } }),
   },
   adminConfig: {
     defaultPageSize: 20,
