@@ -40,9 +40,30 @@ keystone.createList('User', {
       type: Text,
       isUnique: true,
     },
-    isAdmin: { type: Checkbox },
+    isAdmin: {
+      type: Checkbox,
+      defaultValue: false,
+      access: {
+        // Only authenticated users and admins can read their or anyone's isAdmin field
+        read: ({ existingItem, authentication }) => (
+          authentication.item.isAdmin
+          || existingItem.id === authentication.item.id
+        ),
+        // Only Admins can update anyone's isAdmin field.
+        update: ({ authentication }) => authentication.item.isAdmin
+      },
+    },
     password: {
       type: Password,
+      access: {
+        // Only admins can see if a password is set. No-one can read their own or other user's passwords.
+        read: ({ authentication }) => authentication.item.isAdmin,
+        // Only authenticated users can update their own password. Admins can update anyone's password.
+        update: ({ existingItem, authentication }) => (
+          authentication.item.isAdmin
+          || existingItem.id === authentication.item.id
+        ),
+      },
     },
   },
   access: {
@@ -68,7 +89,6 @@ module.exports = {
   apps: [
     new GraphQLApp(),
     new AdminUIApp({
-      // enableDefaultRoute: true,
       authStrategy,
     }),
     new NextApp({ dir: 'app' }),

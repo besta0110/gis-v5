@@ -1,10 +1,10 @@
-const { Text, CloudinaryImage } = require('@keystonejs/fields');
-const cloudinaryAdapter = require('../CloudinaryAdaper');
+const { Text, File } = require('@keystonejs/fields');
+const { fileAdapter } = require('../FileAdapters');
 module.exports = {
   fields: {
-    image: { 
-      type: CloudinaryImage,
-      adapter: cloudinaryAdapter,
+    image: {
+      type: File,
+      adapter: fileAdapter
     },
     title: {
       type: Text,
@@ -13,6 +13,6 @@ module.exports = {
     subTitle: {
       type: Text,
       isRequired: true
-    }
+    },
   }
 }
