@@ -1,0 +1,24 @@
+.main-panel{
+width:100%;
+}
+
+#searchform{
+display:none;
+}
+
+.testimonials-slider .client-pic {
+  display: none;
+}
+
+#download-ask {
+  background:#f5f5f5;
+}
+
+#download-ask .online-jobs .section-title {
+  margin-bottom:-50px !important;
+}
+
+.widget-blog-post ul.block-list .single-item .item-img img {
+  width: 90px;
+  height: 90px;
+}

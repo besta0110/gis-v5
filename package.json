@@ -22,9 +22,10 @@
     "@keystonejs/app-next": "^5.0.1",
     "@keystonejs/auth-password": "^5.0.1",
     "@keystonejs/fields": "^6.0.0",
+    "@keystonejs/fields-wysiwyg-tinymce": "^5.0.3",
     "@keystonejs/file-adapters": "^5.3.0",
     "@keystonejs/keystone": "^5.3.0",
-    "cross-env": "^5.2.0",
+    "cross-env": "^5.2.1",
     "dotenv": "^8.2.0"
   }
 }
