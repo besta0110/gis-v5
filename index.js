@@ -18,6 +18,7 @@ const keystone = new Keystone({
   name: PROJECT_NAME,
   adapter: new Adapter(),
   onConnect: initialiseData,
+  secureCookies: false
 });
 
 // Access control functions
