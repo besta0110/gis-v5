@@ -93,6 +93,7 @@ module.exports = {
     new GraphQLApp(),
     new AdminUIApp({
       authStrategy,
+      hooks: require.resolve('./admin/'),
     }),
     new StaticApp({
       path: '/',
