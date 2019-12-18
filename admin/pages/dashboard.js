@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
     super(props);
     this.state = { notification: { pendings: { hero: 0 } } };
     this.API_ENDPOINT = 'http://localhost:3000/admin/api';  
-    // this.API_ENDPOINT = 'http://localhost:3000/admin/api';
+    // this.API_ENDPOINT = 'http://192.186.142.204:3000/admin/api';
     this.ADMIN_PATH = 'http://localhost:3000/admin';
     // this.ADMIN_PATH = 'http://192.186.142.204:3000/admin'
   }
