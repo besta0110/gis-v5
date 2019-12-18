@@ -9,8 +9,10 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = { notification: { pendings: { hero: 0 } } };
-    this.API_ENDPOINT = 'http://localhost:3000/admin/api';  // 'http://192.186.142.204:3000/admin/api'
-    this.ADMIN_PATH = 'http://localhost:3000/admin';        // 'http://192.186.142.204:3000/admin'
+    this.API_ENDPOINT = 'http://localhost:3000/admin/api';  
+    // this.API_ENDPOINT = 'http://localhost:3000/admin/api';
+    this.ADMIN_PATH = 'http://localhost:3000/admin';
+    // this.ADMIN_PATH = 'http://192.186.142.204:3000/admin'
   }
 
   async componentDidMount() {
