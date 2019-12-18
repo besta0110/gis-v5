@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import { Container } from '@arch-ui/layout';
 import { Title } from '@arch-ui/typography';
-import { Alert, AlertGroup } from '@arch-ui/alert';
+import { Alert } from '@arch-ui/alert';
 
 class Dashboard extends React.Component {
   constructor(props) {
