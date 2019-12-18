@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
         <Title as="h1" margin="both">
           Dashboard
         </Title>
-        {heroCount === 0 ? (<p>You have no any notification</p>) : (<Alert appearance="info"><p>You have {heroCount} pending item(s) waiting for your approval in <a href={this.ADMIN_PATH + '/heroes'}>Hero</a> list</p></Alert>) }
+        {heroCount === 0 ? (<p>You have no any notification</p>) : (<Alert appearance="info"><p>You have {heroCount} pending item(s) waiting for approval in <a href={this.ADMIN_PATH + '/heroes'}>Hero</a> list</p></Alert>) }
       </Container>
     )
   }
