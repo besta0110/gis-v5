@@ -16,15 +16,41 @@ class Dashboard extends React.Component {
   }
 
   async componentDidMount() {
-    const GET_PENDING_HEROES = `
-    query GetPendingHeros {
-      _allHeroesMeta(where: {status: pending}) {
-        count
+    const GET_CURRENT_USER = `query GetCurrentUser {
+      authenticatedUser {
+        id
+        email
+        isAdmin
       }
     }`;
-    
-    let axioResult = await axios.post(this.API_ENDPOINT, { query: GET_PENDING_HEROES });
-    let count = (axioResult ? axioResult.data.data._allHeroesMeta.count : null);
+
+    let axioResult = await axios.post(this.API_ENDPOINT, { query: GET_CURRENT_USER });
+    let userID = (axioResult ? axioResult.data.data.authenticatedUser.id : null);
+    let isAdmin = (axioResult ? axioResult.data.data.authenticatedUser.isAdmin : false);
+    let count = 0;
+
+    if (isAdmin) {
+      console.log('You are an Admin');
+      const GET_ALL_PENDING_HEROES = `
+      query GetPendingHeros {
+        _allHeroesMeta(where: {status: pending}) {
+          count
+        }
+      }`
+      axioResult = await axios.post(this.API_ENDPOINT, { query: GET_ALL_PENDING_HEROES });
+      count = (axioResult ? axioResult.data.data._allHeroesMeta.count : null);  
+    } else {
+      console.log('You are a subscriber');
+      const GET_PENDING_HEROES = `
+      query GetPendingHeros($id: ID!) {
+        allHeroes(where: {author: {id: $id}, status: pending}) {
+          id
+        }
+      }`;
+      axioResult = await axios.post(this.API_ENDPOINT, { query: GET_PENDING_HEROES, variables: { id: userID } });
+      count = (axioResult ? axioResult.data.data.allHeroes.length : null);
+    }
+   
     console.log('Count of Pending Hero itmes', count);
     this.setState({ notification: { pendings: { hero: count } } });
   }
